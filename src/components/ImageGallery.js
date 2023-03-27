@@ -47,11 +47,11 @@ document.addEventListener('keydown', e => {
   }
 });
 
-document.addEventListener('click', e => {
-  if (!e.target.closest('.modal')) {
+window.onclick = e => {
+  if (e.target === document.querySelector('.overlay')) {
     instance.close();
   }
-});
+};
 
 export const ImageGallery = ({ images }) => {
   return (
